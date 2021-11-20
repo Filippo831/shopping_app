@@ -11,26 +11,38 @@ class BottomBar extends StatefulWidget {
 class _BottomBarState extends State<BottomBar> {
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
-        unselectedLabelStyle: TextStyle(
+    // create the container of the bottom bar
+    return Container(
+      // insert top black border
+      decoration: BoxDecoration(
+        color: Theme.of(context).backgroundColor,
+        border: Border(
+            top: BorderSide(color: Theme.of(context).primaryColor, width: 1)),
+      ),
+
+      /*space between top/bottom and icon start*/
+      child: Padding(
+        padding: const EdgeInsets.only(top: 10, bottom: 15),
+
+        /*navigation bar widget*/
+        child: BottomNavigationBar(
+            backgroundColor: Theme.of(context).backgroundColor,
+          /*change font (doesnt work for now)*/
+          unselectedLabelStyle: const TextStyle(
             fontFamily: "roboto",
             fontStyle: FontStyle.normal,
-            ),
-        elevation: 0,
-      items: [
-        BottomNavigationBarItem(
-          icon: Icon(Icons.list),
-          label: "LIST"
+          ),
+          elevation: 0,
+
+          /*all elements in navbar*/
+          items: const [
+            BottomNavigationBarItem(icon: Icon(Icons.list), label: "LIST"),
+            BottomNavigationBarItem(icon: Icon(Icons.add), label: "ADD"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.person_outline), label: "ACCOUNT"),
+          ],
         ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.add),
-          label: "ADD"
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.person_outline),
-          label: "ACCOUNT"
-        ),
-      ],
+      ),
     );
   }
 }
