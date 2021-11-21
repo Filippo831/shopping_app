@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:shopping_app/main_components/navbar.dart';
 import 'package:shopping_app/main_pages/home.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:shopping_app/theme_data/theme.dart';
+
 import 'theme_data/theme.dart' as MyTheme;
 
 void main() {
@@ -17,8 +18,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         title: 'Flutter Demo',
-        theme: MyTheme.LightTheme, 
-        darkTheme: MyTheme.DarkTheme,
+        theme: MyTheme.LightTheme,
+            darkTheme: MyTheme.DarkTheme,
         home: Scaffold(bottomNavigationBar: BottomBar(), body: HomePage()));
   }
 }

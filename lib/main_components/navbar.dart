@@ -26,6 +26,8 @@ class _BottomBarState extends State<BottomBar> {
 
         /*navigation bar widget*/
         child: BottomNavigationBar(
+            selectedItemColor: Theme.of(context).accentColor,
+
             backgroundColor: Theme.of(context).backgroundColor,
           /*change font (doesnt work for now)*/
           unselectedLabelStyle: const TextStyle(
