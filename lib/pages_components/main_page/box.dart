@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 
 class BoxList extends StatefulWidget {
-
-
   const BoxList({
     Key? key,
     this.iDate = "",
-    this.iListName ="",
-    this.iItemsNumber= 0,
+    this.iListName = "",
+    this.iItemsNumber = 0,
     this.iItemsPicked = 0,
     this.iItemsToPick = 0,
   }) : super(key: key);
@@ -17,7 +15,6 @@ class BoxList extends StatefulWidget {
   final int iItemsNumber;
   final int iItemsPicked;
   final int iItemsToPick;
-
 
   @override
   State<BoxList> createState() => _BoxList();
@@ -66,14 +63,14 @@ class _BoxList extends State<BoxList> {
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [Text('${widget.iItemsNumber} items'), Spacer(), 
-                        Column(
-                        children: [
-                            Text('${widget.iItemsPicked} done'),
-                            Text('${widget.iItemsToPick} no done'),
-                                                ]
-                                            )
-                                        ],
+                    children: [
+                      Text('${widget.iItemsNumber} items'),
+                      Spacer(),
+                      Column(children: [
+                        Text('${widget.iItemsPicked} done'),
+                        Text('${widget.iItemsToPick} no done'),
+                      ])
+                    ],
                   ),
                 ),
               )

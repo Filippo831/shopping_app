@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:shopping_app/pages_components/list_page/list.dart';
 import 'package:shopping_app/pages_components/main_page/box.dart';
 
 class HomePage extends StatelessWidget {
@@ -23,6 +24,7 @@ class HomePage extends StatelessWidget {
                 iItemsToPick: 5,
               ),
             ),
+            List_Element(),
             Container(
               height: 100,
               decoration: BoxDecoration(
