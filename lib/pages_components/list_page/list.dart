@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 class ListElement extends StatefulWidget {
+  final String iTitle;
+  final String iSubTitle;
+  final String iQuantity;
   const ListElement({
     Key? key,
     this.iTitle = "",
     this.iSubTitle = "",
     this.iQuantity = "",
   }) : super(key: key);
-  final String iTitle;
-  final String iSubTitle;
-  final String iQuantity;
 
   @override
   _ListElementState createState() => new _ListElementState();
@@ -30,35 +30,29 @@ class _ListElementState extends State<ListElement> {
             flex: 1,
             child: Row(
               children: [
+                Text(
+                  "·",
+                  style: Theme.of(context).textTheme.headline3,
+                ),
+                VerticalDivider(
+                  width: 10,
+                ),
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
                       children: [
-                        Container(
-                          height: 4,
-                          width: 4,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(2)),
-                            color: Theme.of(context).hintColor,
+                        Center(
+                          child: Text(
+                            widget.iTitle,
+                            style: Theme.of(context).textTheme.headline4,
                           ),
                         ),
-                        VerticalDivider(width: 10,),
-                        Text(widget.iTitle),
                       ],
                     ),
-                    Row(
-                      children: [
-                        Container(
-                          height: 4,
-                          width: 4,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(2)),
-                            color: Theme.of(context).backgroundColor,
-                          ),
-                        ),
-                        VerticalDivider(width: 10,),
-                        Text(widget.iSubTitle),
-                      ],
+                    Text(
+                      widget.iSubTitle,
+                      style: Theme.of(context).textTheme.subtitle1,
                     ),
                   ],
                 ),
@@ -70,7 +64,12 @@ class _ListElementState extends State<ListElement> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Container(child: Text(widget.iQuantity)),
+                Container(
+                  child: Text(
+                    widget.iQuantity,
+                    style: Theme.of(context).textTheme.subtitle1,
+                  ),
+                ),
                 Container(
                   child: Icon(Icons.camera, color: Theme.of(context).hintColor),
                 ),
