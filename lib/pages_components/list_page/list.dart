@@ -1,11 +1,23 @@
 import 'package:flutter/material.dart';
 
-class List_Element extends StatefulWidget {
+class ListElement extends StatefulWidget {
+  const ListElement({
+    Key? key,
+    this.iTitle = "",
+    this.iSubTitle = "",
+    this.iQuantity = "",
+  }) : super(key: key);
+  final String iTitle;
+  final String iSubTitle;
+  final String iQuantity;
+
   @override
-  _List_ElementState createState() => new _List_ElementState();
+  _ListElementState createState() => new _ListElementState();
 }
 
-class _List_ElementState extends State<List_Element> {
+// organize this page
+
+class _ListElementState extends State<ListElement> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -18,18 +30,36 @@ class _List_ElementState extends State<List_Element> {
             flex: 1,
             child: Row(
               children: [
-                Container(
-                  height: 4,
-                  width: 4,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(2)),
-                    color: Theme.of(context).hintColor,
-                  ),
-                ),
                 Column(
                   children: [
-                    Text("title"),
-                    Text("subtitle"),
+                    Row(
+                      children: [
+                        Container(
+                          height: 4,
+                          width: 4,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(2)),
+                            color: Theme.of(context).hintColor,
+                          ),
+                        ),
+                        VerticalDivider(width: 10,),
+                        Text(widget.iTitle),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Container(
+                          height: 4,
+                          width: 4,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(2)),
+                            color: Theme.of(context).backgroundColor,
+                          ),
+                        ),
+                        VerticalDivider(width: 10,),
+                        Text(widget.iSubTitle),
+                      ],
+                    ),
                   ],
                 ),
               ],
@@ -40,7 +70,7 @@ class _List_ElementState extends State<List_Element> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Container(child: Text("50g")),
+                Container(child: Text(widget.iQuantity)),
                 Container(
                   child: Icon(Icons.camera, color: Theme.of(context).hintColor),
                 ),

@@ -24,7 +24,11 @@ class HomePage extends StatelessWidget {
                 iItemsToPick: 5,
               ),
             ),
-            List_Element(),
+            ListElement(
+            iTitle: "pesce",
+            iSubTitle: "buono",
+            iQuantity: "100g",
+                        ),
             Container(
               height: 100,
               decoration: BoxDecoration(
