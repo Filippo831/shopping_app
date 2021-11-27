@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
           children: [
             Container(
               color: Theme.of(context).backgroundColor,
-              child: const BoxList(
+              child: BoxList(
                 iDate: "10",
                 iListName: "ciano",
                 iItemsNumber: 15,

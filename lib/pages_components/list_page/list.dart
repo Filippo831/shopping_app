@@ -70,8 +70,9 @@ class _ListElementState extends State<ListElement> {
                     style: Theme.of(context).textTheme.subtitle1,
                   ),
                 ),
+                VerticalDivider(width: 10,),
                 Container(
-                  child: Icon(Icons.camera, color: Theme.of(context).hintColor),
+                  child: Icon(Icons.photo_camera_outlined, color: Theme.of(context).hintColor),
                 ),
                 SizedBox(
                   height: 40,

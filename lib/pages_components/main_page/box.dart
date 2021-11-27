@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 
 class BoxList extends StatefulWidget {
+  final String iListName;
+
+  final String iDate;
+  final int iItemsNumber;
+  final int iItemsPicked;
+  final int iItemsToPick;
   const BoxList({
     Key? key,
     this.iDate = "",
@@ -9,12 +15,6 @@ class BoxList extends StatefulWidget {
     this.iItemsPicked = 0,
     this.iItemsToPick = 0,
   }) : super(key: key);
-
-  final String iListName;
-  final String iDate;
-  final int iItemsNumber;
-  final int iItemsPicked;
-  final int iItemsToPick;
 
   @override
   State<BoxList> createState() => _BoxList();
@@ -41,12 +41,23 @@ class _BoxList extends State<BoxList> {
                 flex: 1,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  child: Row(
                     children: [
-                      Text(widget.iListName),
-                      Spacer(),
-                      Text(widget.iDate),
+                        Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Expanded(child: Text("·", style: Theme.of(context).textTheme.headline3,)),
+                            Spacer(flex:1),
+                          ],
+                        ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(widget.iListName, style: Theme.of(context).textTheme.headline4),
+                          Spacer(),
+                          Text(widget.iDate, style: Theme.of(context).textTheme.subtitle1),
+                        ],
+                      ),
                     ],
                   ),
                 ),
@@ -64,12 +75,20 @@ class _BoxList extends State<BoxList> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      Text('${widget.iItemsNumber} items'),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 40),
+                        child: Text("${widget.iItemsNumber} items", style: Theme.of(context).textTheme.headline5),
+                      ),
                       Spacer(),
-                      Column(children: [
-                        Text('${widget.iItemsPicked} done'),
-                        Text('${widget.iItemsToPick} no done'),
-                      ])
+                      Padding(
+                        padding: const EdgeInsets.only(right:20),
+                        child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                                                  children: [
+                          Text("- ${widget.iItemsPicked} done", style: Theme.of(context).textTheme.subtitle1,),
+                          Text("- ${widget.iItemsToPick} no done", style: Theme.of(context).textTheme.subtitle1),
+                        ]),
+                      )
                     ],
                   ),
                 ),
