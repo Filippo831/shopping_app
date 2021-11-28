@@ -5,38 +5,79 @@ import 'package:shopping_app/pages_components/main_page/box.dart';
 
 class HomePage extends StatelessWidget {
   @override
+  List<int> listElementText = List.filled(15, 0);
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Container(
       decoration: BoxDecoration(color: Theme.of(context).backgroundColor),
-      child: SizedBox(
-        height: size.height,
-        width: size.width,
-        child: Column(
-          children: [
-            Container(
-              color: Theme.of(context).backgroundColor,
-              child: BoxList(
-                iDate: "10",
-                iListName: "ciano",
-                iItemsNumber: 15,
-                iItemsPicked: 10,
-                iItemsToPick: 5,
-              ),
-            ),
-            ListElement(
-            iTitle: "pesce",
-            iSubTitle: "buono",
-            iQuantity: "100g",
-                        ),
-            Container(
-              height: 100,
-              decoration: BoxDecoration(
-                color: Colors.yellow,
-              ),
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal:size.width/20),
+        child: SizedBox(
+            height: size.height,
+            width: size.width,
+            child: Column(
+              children: [
+                  Divider(
+                  height: size.height/20,
+                  color: Colors.transparent,
+                          ),
+                Align(
+                alignment: Alignment.centerLeft,
+                  child: Text(
+                    "- YOUR LIST",
+                    textAlign: TextAlign.left,
+                    style: Theme.of(context).textTheme.headline5,
+                  ),
+                ),
+                Expanded(
+                  child: ListView(
+                    children: listElementText
+                        .map((element) => BoxList(
+                              iDate: "10",
+                              iListName: "ciano",
+                              iItemsNumber: 15,
+                              iItemsPicked: 10,
+                              iItemsToPick: 5,
+                            ))
+                        .toList(),
+                  ),
+                ),
+
+                /*SingleChildScrollView(*/
+                /*child: Column(*/
+                /*children: listElementText*/
+                /*.map((element) => BoxList(*/
+                /*iDate: "10",*/
+                /*iListName: "ciano",*/
+                /*iItemsNumber: 15,*/
+                /*iItemsPicked: 10,*/
+                /*iItemsToPick: 5,*/
+                /*))*/
+                /*.toList(),*/
+                /*),*/
+                /*),*/
+              ],
             )
-          ],
-        ),
+            /*child: Column(*/
+            /*children: [*/
+            /*Container(*/
+            /*color: Theme.of(context).backgroundColor,*/
+            /*child: BoxList(*/
+            /*iDate: "10",*/
+            /*iListName: "ciano",*/
+            /*iItemsNumber: 15,*/
+            /*iItemsPicked: 10,*/
+            /*iItemsToPick: 5,*/
+            /*),*/
+            /*),*/
+            /*ListElement(*/
+            /*iTitle: "pesce",*/
+            /*iSubTitle: "buono",*/
+            /*iQuantity: "100g",*/
+            /*),*/
+            /*],*/
+            /*),*/
+            ),
       ),
     );
   }
