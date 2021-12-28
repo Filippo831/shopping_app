@@ -21,7 +21,7 @@ class _ListElementState extends State<ListElement> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    return new Container(
+    return Container(
       width: size.width * .8,
       decoration: BoxDecoration(),
       child: Row(
@@ -34,7 +34,7 @@ class _ListElementState extends State<ListElement> {
                   "·",
                   style: Theme.of(context).textTheme.headline3,
                 ),
-                VerticalDivider(
+                const VerticalDivider(
                   width: 10,
                 ),
                 Column(
