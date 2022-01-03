@@ -4,7 +4,7 @@ import 'package:shopping_app/main_components/navbar.dart';
 import 'package:shopping_app/main_pages/home.dart';
 import 'package:shopping_app/theme_data/theme.dart';
 
-import 'pages_components/list_page/list.dart';
+import 'main_pages/list.dart';
 import 'theme_data/theme.dart' as MyTheme;
 
 void main() {
@@ -19,12 +19,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         routes: {
-            "home": (context) => HomePage(),
-            "list": (context) => ListElement(),
-            },
+          "home": (context) => HomePage(),
+          "list": (context) => ListPage(),
+        },
         title: 'Flutter Demo',
         theme: MyTheme.LightTheme,
         darkTheme: MyTheme.DarkTheme,
-        home: Scaffold(bottomNavigationBar: BottomBar(), body: HomePage()));
+        home: Scaffold(
+            bottomNavigationBar: BottomBar(),
+            appBar: AppBar(),
+            body: HomePage()));
   }
 }
