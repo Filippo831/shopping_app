@@ -25,9 +25,9 @@ class _BoxList extends State<BoxList> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return TextButton(
-        onPressed: () {
-            Navigator.pushNamed(context, "list");
-            },
+      onPressed: () {
+        Navigator.pushNamed(context, "list");
+      },
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10),
         child: SizedBox(

@@ -27,7 +27,6 @@ class MyApp extends StatelessWidget {
         darkTheme: MyTheme.DarkTheme,
         home: Scaffold(
             bottomNavigationBar: BottomBar(),
-            appBar: AppBar(),
             body: HomePage()));
   }
 }

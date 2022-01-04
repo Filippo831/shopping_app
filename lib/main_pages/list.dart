@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_app/main_components/appbar.dart';
 import 'package:shopping_app/main_components/navbar.dart';
 import 'package:shopping_app/pages_components/list_page/list.dart';
 
@@ -14,9 +13,16 @@ class _ListPageState extends State<ListPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomBar(),
-      appBar: MyAppBar(),
-      body: new Container(
-        child: Column(
+      appBar: AppBar(
+        elevation: 0,
+        foregroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Theme.of(context).backgroundColor,
+      ),
+      body: Container(
+        decoration: BoxDecoration(
+          color: Theme.of(context).backgroundColor,
+        ),
+        child: ListView(
           children: testList
               .map((e) => ListElement(
                     iTitle: "ciao",
