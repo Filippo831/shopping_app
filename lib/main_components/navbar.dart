@@ -10,6 +10,20 @@ class BottomBar extends StatefulWidget {
 
 class _BottomBarState extends State<BottomBar> {
   @override
+  routeFunction(int index) {
+    switch (index) {
+      case 0:
+        Navigator.pushNamed(context, "/");
+        break;
+      case 1:
+        Navigator.pushNamed(context, "add");
+        break;
+      case 2:
+        Navigator.pushNamed(context, "user");
+        break;
+    }
+  }
+
   Widget build(BuildContext context) {
     // create the container of the bottom bar
     return Container(
@@ -26,15 +40,17 @@ class _BottomBarState extends State<BottomBar> {
 
         /*navigation bar widget*/
         child: BottomNavigationBar(
-            selectedItemColor: Theme.of(context).accentColor,
-
-            backgroundColor: Theme.of(context).backgroundColor,
+          selectedItemColor: Theme.of(context).accentColor,
+          backgroundColor: Theme.of(context).backgroundColor,
           /*change font (doesnt work for now)*/
           unselectedLabelStyle: const TextStyle(
             fontFamily: "roboto",
             fontStyle: FontStyle.normal,
           ),
           elevation: 0,
+          onTap: (index) {
+            routeFunction(index);
+          },
 
           /*all elements in navbar*/
           items: const [

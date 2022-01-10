@@ -4,6 +4,7 @@ import 'package:shopping_app/main_components/navbar.dart';
 import 'package:shopping_app/main_pages/home.dart';
 import 'package:shopping_app/theme_data/theme.dart';
 
+import 'main_pages/add.dart';
 import 'main_pages/list.dart';
 import 'theme_data/theme.dart' as MyTheme;
 
@@ -21,12 +22,11 @@ class MyApp extends StatelessWidget {
         routes: {
           "home": (context) => HomePage(),
           "list": (context) => ListPage(),
+          "add": (context) => AddPage(),
         },
         title: 'Flutter Demo',
         theme: MyTheme.LightTheme,
         darkTheme: MyTheme.DarkTheme,
-        home: Scaffold(
-            bottomNavigationBar: BottomBar(),
-            body: HomePage()));
+        home: Scaffold(bottomNavigationBar: BottomBar(), body: HomePage()));
   }
 }

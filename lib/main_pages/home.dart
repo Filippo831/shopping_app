@@ -32,21 +32,22 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               Expanded(
-                child: ShaderMask(
-                  shaderCallback: (Rect rect) {
-                    return LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [
-                        Theme.of(context).backgroundColor,
-                        Colors.transparent,
-                        Colors.transparent,
-                        Theme.of(context).backgroundColor
-                      ],
-                      stops: [0.0, 0.05, 0.95, 1.0],
-                    ).createShader(rect);
-                  },
-                  blendMode: BlendMode.dstOut,
+                              /*SHADE OFF WHEN ON EDGES*/
+                /*child: ShaderMask(*/
+                  /*shaderCallback: (Rect rect) {*/
+                    /*return LinearGradient(*/
+                      /*begin: Alignment.topCenter,*/
+                      /*end: Alignment.bottomCenter,*/
+                      /*colors: [*/
+                        /*Theme.of(context).backgroundColor,*/
+                        /*Colors.transparent,*/
+                        /*Colors.transparent,*/
+                        /*Theme.of(context).backgroundColor*/
+                      /*],*/
+                      /*stops: [0.0, 0.05, 0.95, 1.0],*/
+                    /*).createShader(rect);*/
+                  /*},*/
+                  /*blendMode: BlendMode.dstOut,*/
                   child: ListView(
                     padding: EdgeInsets.symmetric(vertical: 10),
                     children: listElementText
@@ -62,7 +63,7 @@ class HomePage extends StatelessWidget {
                         .toList(),
                   ),
                 ),
-              ),
+              /*),*/
             ],
           ),
         ),
