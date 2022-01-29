@@ -27,6 +27,6 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         theme: MyTheme.LightTheme,
         darkTheme: MyTheme.DarkTheme,
-        home: Scaffold(bottomNavigationBar: BottomBar(), body: HomePage()));
+        home: SafeArea(child: Scaffold(bottomNavigationBar: BottomBar(), body: HomePage())));
   }
 }
